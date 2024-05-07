@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Редактирование
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Редактирование коллекции</h1>
+    <form method="post">
+        <input type="text" name="name" id="name" class="form-control" value="{{ article.name }}" placeholder="Введите название"><br>
+        <textarea name="genre" id="genre" class="form-control" placeholder="Введите жанры">{{ article.genre }}</textarea><br>
+        <textarea name="description" id="description" class="form-control" placeholder="Введите описание">{{ article.description }}</textarea><br>
+        <input type="date" name="datereliz" id="datereliz" class="form-control" value="{{ article.datereliz }}"><br>
+        <input type="submit" class="btn btn-success" value="Обновить">
+    </form>
+</div>
+<a href="/collections/{{ article.id }}">Расширенная коллекция</a>
+<h3><a href="/collections"> Коллекции</a></h3>
+
+{% endblock %}
